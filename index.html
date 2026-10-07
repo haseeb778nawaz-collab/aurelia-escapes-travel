@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Aurelia Escapes | Curated Luxury Travel</title>
+  <meta name="description"
+    content="Aurelia Escapes designs private, handpicked journeys to the world's most beautiful places.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Manrope:wght@400;500;600&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <header class="nav" id="nav">
+    <div class="nav__inner">
+      <a href="#top" class="logo" aria-label="Aurelia Escapes home">Aurelia <span>Escapes</span></a>
+      <nav id="menu" class="nav__links" aria-label="Main">
+        <a href="#destinations">Destinations</a>
+        <a href="#resorts">Resorts</a>
+        <a href="#experiences">Experiences</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+        <a href="#planner" class="btn btn--gold nav__cta">Plan Your Trip</a>
+      </nav>
+      <button class="icon-btn" id="themeToggle" aria-label="Toggle dark mode">◐</button>
+      <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false"
+        aria-controls="menu"><span></span><span></span></button>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero" id="top">
+      <img class="hero__img"
+        src="https://images.unsplash.com/photo-1514282401047-d79a71a590e8?auto=format&fit=crop&w=1800&q=75"
+        alt="Overwater villas above turquoise water in the Maldives" fetchpriority="high">
+      <div class="hero__shade"></div>
+      <div class="container hero__content">
+        <p class="eyebrow">Curated Escapes</p>
+        <h1>Travel Beyond the Ordinary.</h1>
+        <p class="hero__lead">Aurelia Escapes designs private journeys to the world's most beautiful places, with stays
+          we have visited ourselves and itineraries built around you.</p>
+        <div class="hero__cta">
+          <a href="#destinations" class="btn btn--gold">Explore Destinations</a>
+          <a href="#planner" class="btn btn--ghost">Plan Your Journey</a>
+        </div>
+      </div>
+      <form class="booking container" id="bookingForm" novalidate aria-label="Search stays">
+        <div class="field"><label for="bDest">Destination</label>
+          <select id="bDest" required>
+            <option value="">Choose a place</option>
+          </select>
+        </div>
+        <div class="field"><label for="bIn">Check-in</label><input type="date" id="bIn" required></div>
+        <div class="field"><label for="bOut">Check-out</label><input type="date" id="bOut" required></div>
+        <div class="field"><label for="bGuests">Guests</label>
+          <select id="bGuests">
+            <option>1 guest</option>
+            <option selected>2 guests</option>
+            <option>3 guests</option>
+            <option>4 guests</option>
+            <option>5+ guests</option>
+          </select>
+        </div>
+        <button class="btn btn--green" type="submit" id="bBtn">Search</button>
+        <p class="field-error" id="bErr" role="alert"></p>
+      </form>
+    </section>
+
+    <section class="section container" id="destinations">
+      <div class="head">
+        <h2>Places we return to</h2>
+        <p>Six destinations, each with stays and guides we trust.</p>
+      </div>
+      <div class="grid grid--dest" id="destGrid"></div>
+      <div class="center"><a href="#planner" class="btn btn--outline" id="viewAll">View All Destinations</a></div>
+    </section>
+
+    <section class="section why" id="about">
+      <div class="container">
+        <div class="head">
+          <h2>Why Aurelia</h2>
+          <p>Travel planned by people who have slept in the rooms they recommend.</p>
+        </div>
+        <div class="grid grid--why">
+          <article><svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M12 21s-7-6.2-7-11a7 7 0 0114 0c0 4.8-7 11-7 11z" />
+              <circle cx="12" cy="10" r="2.5" />
+            </svg>
+            <h3>Handpicked destinations</h3>
+            <p>Fewer places, known deeply. We only send you where we would go.</p>
+          </article>
+          <article><svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M3 20V9l9-5 9 5v11M9 20v-6h6v6" />
+            </svg>
+            <h3>Curated luxury stays</h3>
+            <p>Boutique hotels and resorts inspected in person, every season.</p>
+          </article>
+          <article><svg viewBox="0 0 24 24" aria-hidden="true">
+              <rect x="4" y="5" width="16" height="15" rx="2" />
+              <path d="M8 3v4M16 3v4M4 10h16" />
+            </svg>
+            <h3>Personalized itineraries</h3>
+            <p>Pace, food and activities shaped around how you like to travel.</p>
+          </article>
+          <article><svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M4 14v-2a8 8 0 0116 0v2M4 14h3v5H4zM17 14h3v5h-3zM20 19c0 2-3 2-6 2" />
+            </svg>
+            <h3>24/7 travel support</h3>
+            <p>A real person answers, day or night, wherever you are.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section container" id="resorts">
+      <div class="head">
+        <h2>Featured resorts</h2>
+        <p>Places to stay that are part of the trip, not just a bed.</p>
+      </div>
+      <div class="grid grid--resort" id="resortGrid"></div>
+    </section>
+
+    <section class="section container" id="experiences">
+      <div class="head">
+        <h2>Experiences</h2>
+        <p>Add something you will still talk about in ten years.</p>
+      </div>
+      <div class="grid grid--exp" id="expGrid"></div>
+    </section>
+
+    <section class="section planner" id="planner">
+      <div class="container planner__wrap">
+        <div>
+          <h2>Build a trip in a minute</h2>
+          <p class="muted">Tell us the basics and see a sample itinerary. Our planners will refine it with you.</p>
+          <form id="plannerForm" class="planner__form">
+            <div class="field"><label for="pDest">Destination</label><select id="pDest"></select></div>
+            <div class="field"><label for="pStyle">Travel style</label><select id="pStyle">
+                <option>Relaxation</option>
+                <option>Adventure</option>
+                <option>Culture</option>
+                <option>Romance</option>
+              </select></div>
+            <div class="field"><label for="pBudget">Budget</label><select id="pBudget">
+                <option value="1">Refined</option>
+                <option value="1.5" selected>Luxury</option>
+                <option value="2.4">Ultra-luxury</option>
+              </select></div>
+            <div class="field"><label for="pTrav">Travelers</label><input type="number" id="pTrav" min="1" max="12"
+                value="2"></div>
+            <div class="field"><label for="pDays">Nights</label><input type="number" id="pDays" min="3" max="14"
+                value="5"></div>
+            <button class="btn btn--gold" type="submit" id="pBtn">Build My Trip</button>
+          </form>
+        </div>
+        <div class="itinerary" id="itinerary" aria-live="polite">
+          <p class="muted">Your itinerary will appear here.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section container" id="gallery">
+      <div class="head">
+        <h2>Gallery</h2>
+        <p>A few moments from the road.</p>
+      </div>
+      <div class="masonry" id="masonry"></div>
+    </section>
+
+    <section class="section testimonials">
+      <div class="container">
+        <div class="head">
+          <h2>Guests say</h2>
+        </div>
+        <div class="carousel" id="carousel" aria-roledescription="carousel" aria-label="Testimonials">
+          <div class="carousel__track" id="cTrack"></div>
+          <div class="carousel__ctrl">
+            <button class="icon-btn" id="cPrev" aria-label="Previous testimonial">←</button>
+            <div class="dots" id="cDots"></div>
+            <button class="icon-btn" id="cNext" aria-label="Next testimonial">→</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section container" id="packages">
+      <div class="head">
+        <h2>Travel packages</h2>
+        <p>Start here, then we tailor every detail.</p>
+      </div>
+      <div class="packages" id="pkgGrid"></div>
+    </section>
+
+    <section class="section container faq" id="faq">
+      <div class="head">
+        <h2>Questions</h2>
+      </div>
+      <div id="faqList"></div>
+    </section>
+
+    <section class="section news">
+      <div class="container news__inner">
+        <h2>Get Inspired to Go Further.</h2>
+        <p>One considered email a month. New places, quiet season deals, no noise.</p>
+        <form class="news__form" id="newsForm" novalidate>
+          <label for="nEmail" class="sr">Email address</label>
+          <input type="email" id="nEmail" placeholder="you@example.com" autocomplete="email">
+          <button class="btn btn--gold" type="submit">Subscribe</button>
+        </form>
+        <p class="field-error" id="nMsg" role="status"></p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer" id="contact">
+    <div class="container footer__grid">
+      <div><a href="#top" class="logo">Aurelia <span>Escapes</span></a>
+        <p>Private, handpicked journeys to the world's most beautiful places.</p>
+        <div class="social">
+          <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24">
+              <rect x="4" y="4" width="16" height="16" rx="5" />
+              <circle cx="12" cy="12" r="3.5" />
+            </svg></a>
+          <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24">
+              <path d="M14 8h3V4h-3a4 4 0 00-4 4v3H7v4h3v6h4v-6h3l1-4h-4V8z" />
+            </svg></a>
+          <a href="#" aria-label="X"><svg viewBox="0 0 24 24">
+              <path d="M5 4l14 16M19 4L5 20" />
+            </svg></a>
+        </div>
+      </div>
+      <div>
+        <h3>Destinations</h3><a href="#destinations">Santorini</a><a href="#destinations">Maldives</a><a
+          href="#destinations">Swiss Alps</a><a href="#destinations">Bali</a>
+      </div>
+      <div>
+        <h3>Experiences</h3><a href="#experiences">Yacht cruises</a><a href="#experiences">Desert safaris</a><a
+          href="#experiences">Culinary</a><a href="#experiences">Wellness</a>
+      </div>
+      <div>
+        <h3>Company</h3><a href="#about">About</a><a href="#packages">Packages</a><a href="#faq">FAQ</a>
+      </div>
+      <div>
+        <h3>Contact</h3><a href="mailto:hello@aureliaescapes.com">hello@aureliaescapes.com</a><a
+          href="tel:+41000000000">+41 48 644 4988</a><span>Zurich, Switzerland</span>
+      </div>
+    </div>
+    <p class="copy container">© 2026 Aurelia Escapes. All rights reserved.</p>
+  </footer>
+
+  <button class="totop" id="toTop" aria-label="Back to top">↑</button>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Image viewer" hidden>
+    <button class="lb__btn lb__close" id="lbClose" aria-label="Close">×</button>
+    <button class="lb__btn lb__prev" id="lbPrev" aria-label="Previous image">←</button>
+    <figure><img id="lbImg" alt="">
+      <figcaption id="lbCap"></figcaption>
+    </figure>
+    <button class="lb__btn lb__next" id="lbNext" aria-label="Next image">→</button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
